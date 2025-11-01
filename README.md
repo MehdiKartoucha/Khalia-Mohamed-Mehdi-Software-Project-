@@ -359,8 +359,6 @@ A : Créez une classe hérité de `BaseBitPacking` et enregistrez-la dans `facto
 - **Année :** 2025
 - **Auteur :** Khalia Mohamed Mehdi
 
-**Repository Git :** [Khalia-Mohamed-Mehdi-Software-Project](https://github.com/Khalia-Mohamed-Mehdi-Software-Project)
-
 ---
 
 **Bon compression !** 🚀
