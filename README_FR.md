@@ -22,6 +22,25 @@ Système de compression d'entiers par **bit-packing** optimisé pour la transmis
 
 **Prérequis :** Python 3.8+
 
+### Créer un Environnement Virtuel
+
+```bash
+# Créer l'environnement virtuel
+python -m venv venv
+
+# Activer l'environnement virtuel
+# Sur Windows (CMD)
+venv\Scripts\activate
+
+# Sur Windows (Git Bash)
+source venv/Scripts/activate
+
+# Sur macOS/Linux
+source venv/bin/activate
+```
+
+### Installer les Dépendances
+
 ```
 pip install -r requirements.txt
 ```
