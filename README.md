@@ -331,19 +331,6 @@ A : Créez une classe hérité de `BaseBitPacking` et enregistrez-la dans `facto
 
 ---
 
-## 🚀 Améliorations Futures
-
-- [ ] Support nombres décimaux (float)
-- [ ] Compression par dictionnaire
-- [ ] Interface web (Flask)
-- [ ] Parallélisation (multiprocessing)
-- [ ] Support fichiers compressés
-- [ ] Intégration protobuf
-- [ ] Optimisation Cython
-- [ ] Support streaming
-
----
-
 ## 📚 Dépendances
 
 - `numpy` - Calculs numériques et benchmarking
