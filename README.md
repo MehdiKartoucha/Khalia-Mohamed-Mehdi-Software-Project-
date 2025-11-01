@@ -12,13 +12,13 @@ Système de compression d'entiers par **bit-packing** optimisé pour la transmis
 **Défi :** 1000 entiers = 4000 bytes normalement. Mais si vos nombres ne nécessitent que 8 bits, pourquoi ne pas les compresser à 1000 bytes ?
 
 **3 stratégies implémentées :**
-- 🔴 **Compression Maximale** (`with_overflow`) - Meilleure réduction de taille
-- 🟡 **Accès Ultra-Rapide** (`no_overflow`) - Lecture directe sans décompression
-- 🟢 **Approche Hybride** (`overflow_area`) - Équilibre compression/accès
+-  **Compression Maximale** (`with_overflow`) - Meilleure réduction de taille
+-  **Accès Ultra-Rapide** (`no_overflow`) - Lecture directe sans décompression
+-  **Approche Hybride** (`overflow_area`) - Équilibre compression/accès
 
 ---
 
-## 📦 Installation
+##  Installation
 
 **Prérequis :** Python 3.8+
 
@@ -49,21 +49,21 @@ Cela installe : `numpy`, `pytest`, `matplotlib`
 
 ---
 
-## 🚀 Démarrage Rapide
+##  Démarrage Rapide
 
 | Mode | Commande | Utilité |
 |------|----------|---------|
-| 🎨 **GUI** | `python -m src.gui` | Débuter, visualiser les résultats |
-| 💻 **Menu** | `python main.py` | Compresser vos données, tester |
-| 📊 **Exemples** | `c` | Voir 7 cas d'usage |
-| ⚡ **Benchmarks** | `python -m src.benchmark` | Analyser les performances |
-| ✅ **Tests** | `python -m pytest tests/ -v` | Valider le code (30 tests) |
+|  **GUI** | `python -m src.gui` | Débuter, visualiser les résultats |
+|  **Menu** | `python main.py` | Compresser vos données, tester |
+|  **Exemples** | `c` | Voir 7 cas d'usage |
+|  **Benchmarks** | `python -m src.benchmark` | Analyser les performances |
+|  **Tests** | `python -m pytest tests/ -v` | Valider le code (30 tests) |
 
 ---
 
-## 📖 Utilisation
+##  Utilisation
 
-### 1️⃣ Interface Graphique (Recommandée pour débuter)
+### 1️ Interface Graphique (Recommandée pour débuter)
 
 ```
 python -m src.gui
@@ -75,7 +75,7 @@ Accédez à :
 - Comparaisons en temps réel
 - Statistiques détaillées
 
-### 2️⃣ Menu Interactif
+### 2️ Menu Interactif
 
 ```
 python main.py
@@ -95,7 +95,7 @@ python main.py
 - Virgules : `1, 2, 3, 4, 5`
 - Négatifs : `-10 -5 0 5 10`
 
-### 3️⃣ Utilisation en Python
+### 3 Utilisation en Python
 
 ```python
 from src.factory import CompressionFactory
@@ -122,7 +122,7 @@ restaurees = compresseur.decompress(compressees)
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 ```
 src/
@@ -144,7 +144,7 @@ tests/
 
 ---
 
-## 🔧 Stratégies de Compression
+##  Stratégies de Compression
 
 ### 1. Avec Débordement (`with_overflow`)
 
@@ -152,10 +152,10 @@ tests/
 
 | Aspect | Détail |
 |--------|--------|
-| ✅ Avantages | Compression maximale, excellent pour petites valeurs |
-| ❌ Inconvénients | Accès aléatoire plus lent |
-| 🎯 Cas d'usage | Connexion très lente, données uniformément petites |
-| 📊 Exemple | Ratio ~5.0x pour `[1,2,3,4,5]` |
+|  Avantages | Compression maximale, excellent pour petites valeurs |
+|  Inconvénients | Accès aléatoire plus lent |
+|  Cas d'usage | Connexion très lente, données uniformément petites |
+|  Exemple | Ratio ~5.0x pour `[1,2,3,4,5]` |
 
 ### 2. Sans Débordement (`no_overflow`)
 
@@ -163,10 +163,10 @@ tests/
 
 | Aspect | Détail |
 |--------|--------|
-| ✅ Avantages | Accès ultra-rapide, calculs simples |
-| ❌ Inconvénients | Compression légèrement moins bonne |
-| 🎯 Cas d'usage | Accès fréquent aux éléments, latence acceptable |
-| 📊 Exemple | Ratio ~2.0x, accès optimal |
+|  Avantages | Accès ultra-rapide, calculs simples |
+|  Inconvénients | Compression légèrement moins bonne |
+|  Cas d'usage | Accès fréquent aux éléments, latence acceptable |
+|  Exemple | Ratio ~2.0x, accès optimal |
 
 ### 3. Zone de Débordement (`overflow_area`)
 
@@ -174,14 +174,14 @@ tests/
 
 | Aspect | Détail |
 |--------|--------|
-| ✅ Avantages | Bon compromis, détecte les outliers |
-| ❌ Inconvénients | Configuration (percentile) |
-| 🎯 Cas d'usage | Données réelles avec anomalies |
-| 📊 Exemple | Ratio ~2.9x, équilibre compression/accès |
+|  Avantages | Bon compromis, détecte les outliers |
+|  Inconvénients | Configuration (percentile) |
+|  Cas d'usage | Données réelles avec anomalies |
+|  Exemple | Ratio ~2.9x, équilibre compression/accès |
 
 ---
 
-## 📊 Résultats Benchmarks (1000 éléments)
+##  Résultats Benchmarks (1000 éléments)
 
 | Métrique | Avec Débordement | Sans Débordement | Hybride |
 |----------|------------------|------------------|---------|
@@ -195,46 +195,46 @@ tests/
 
 ---
 
-## 🧪 Tests
+##  Tests
 
 Suite de **30 tests unitaires** couvrant :
 
-✅ **Compressions/Décompressions Basiques (6 tests)**
+ **Compressions/Décompressions Basiques (6 tests)**
 - Compression/décompression correcte
 - Réduction de taille
 - Tableaux vides, single, tous zéros
 
-✅ **Accès Aléatoire (5 tests)**
+ **Accès Aléatoire (5 tests)**
 - Accès à tous les indices
 - Premiers/derniers éléments
 - Vérification des limites
 
-✅ **Nombres Négatifs (4 tests)**
+ **Nombres Négatifs (4 tests)**
 - Uniquement négatifs
 - Mélange positif/négatif
 - Grands négatifs
 
-✅ **Distributions de Données (4 tests)**
+ **Distributions de Données (4 tests)**
 - Distribution uniforme
 - Petites valeurs
 - Données avec outliers
 - Séquences
 
-✅ **Cas Limites (3 tests)**
+ **Cas Limites (3 tests)**
 - Valeurs maximales
 - Grands tableaux (100k+ éléments)
 - Patterns alternants
 
-✅ **Usine de Création (4 tests)**
+ **Usine de Création (4 tests)**
 - Création tous types
 - Types invalides
 - Énumération des types
 
-✅ **Métadonnées (2 tests)**
+ **Métadonnées (2 tests)**
 - Information complète
 - Ratio de compression correct
 
-✅ **Comportements Spécifiques (2 tests)**
+ **Comportements Spécifiques (2 tests)**
 - Différences between méthodes
 - Détection automatique outliers
 
@@ -248,7 +248,7 @@ Résultat attendu : **30 passed** ✅
 
 ---
 
-## ⚙️ Concepts Techniques
+##  Concepts Techniques
 
 ### Factory Pattern
 
@@ -285,14 +285,14 @@ compresseur.compress(donnees)  # Fonctionne parfaitement
 
 ---
 
-## 💡 FAQ
+##  FAQ
 
 **Q : Quelle méthode choisir ?**
 
 A :
-- 🐢 Connexion lente → `with_overflow` (compression max)
-- 🚀 Besoin de vitesse → `no_overflow` (accès rapide)
-- ⚖️ Vous hésitez → `overflow_area` (bon équilibre)
+-  Connexion lente → `with_overflow` (compression max)
+-  Besoin de vitesse → `no_overflow` (accès rapide)
+-  Vous hésitez → `overflow_area` (bon équilibre)
 
 **Q : Les données négatives sont supportées ?**
 
@@ -308,7 +308,7 @@ A : Créez une classe hérité de `BaseBitPacking` et enregistrez-la dans `facto
 
 ---
 
-## 🐛 Dépannage
+##  Dépannage
 
 | Erreur | Cause | Solution |
 |--------|-------|----------|
@@ -319,7 +319,7 @@ A : Créez une classe hérité de `BaseBitPacking` et enregistrez-la dans `facto
 
 ---
 
-## 🎓 Ce Que Vous Apprendrez
+##  Ce Que Vous Apprendrez
 
 1. **Design Patterns** - Factory et Strategy patterns en action
 2. **Compression de Données** - Bit-packing et encodage ZigZag
@@ -331,7 +331,7 @@ A : Créez une classe hérité de `BaseBitPacking` et enregistrez-la dans `facto
 
 ---
 
-## 📚 Dépendances
+##  Dépendances
 
 - `numpy` - Calculs numériques et benchmarking
 - `pytest` - Framework de tests
@@ -339,7 +339,7 @@ A : Créez une classe hérité de `BaseBitPacking` et enregistrez-la dans `facto
 
 ---
 
-## 📄 Informations
+##  Informations
 
 - **Type :** Projet académique
 - **Institution :** Master 1 IA - Génie Logiciel
@@ -347,5 +347,3 @@ A : Créez une classe hérité de `BaseBitPacking` et enregistrez-la dans `facto
 - **Auteur :** Khalia Mohamed Mehdi
 
 ---
-
-**Bon compression !** 🚀
